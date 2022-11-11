@@ -13,7 +13,7 @@ const Navbar = () => {
   <br/>
   <div className='menu-bar'>
    <Link to="/"><img className='logo' 
-    src='logo.jpg' alt='logo'/></Link> 
+    src='logo.png' alt='logo'/></Link> 
  <div className='menu'>
      <a href='/' className='hover-underline-animation' >Home</a>
      <a href='/about-us' className='hover-underline-animation' >About Us </a>
@@ -33,4 +33,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar;
+export default Navbar

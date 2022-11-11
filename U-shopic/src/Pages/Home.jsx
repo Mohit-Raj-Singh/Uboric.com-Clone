@@ -1,17 +1,17 @@
 import React from 'react'
-// import Slider from '../components/slider/Slider'
+import Slider from '../components/slider/Slider'
 import styles from "../Styles/Home.module.css"
 import {AiOutlineArrowRight} from "react-icons/ai"
-// import TextSlider from '../components/slider/TextSlider'
-// import SecondSlider from '../components/slider/SecondSlider'
-// import ThirdSlider from '../components/slider/ThirdSlider'
-// import Instructions from "../components/AboutUs/Instructions"
+import TextSlider from '../components/slider/TextSlider'
+import SecondSlider from '../components/slider/SecondSlider'
+import ThirdSlider from '../components/slider/ThirdSlider'
+import Instructions from "../components/AboutUs/Instructions"
 
  
 const Home = () => {
   return (
     <div>
-     {/* <div > <Slider/></div> */}
+     <div > <Slider/></div>
       {/* <button className={styles.shopnow}>Shop now</button> */}
       {/* images */}
     <div className={styles.imgs}>
@@ -38,7 +38,7 @@ const Home = () => {
      <a href='about' className={styles.hoverunderlineanimation}>Clothing </a>
      <a href='shop' className={styles.hoverunderlineanimation}>Foot Wear</a>
  </div>
- {/* <TextSlider/> */}
+ <TextSlider/>
 <div className={styles.main}>
 <div className={styles.secondSlider}
       style={{ height:"290px",gap:"20px",width:"49%",
@@ -96,12 +96,12 @@ const Home = () => {
 </div>
 <h1 style={{fontWeight:"bold",fontSize:"30px"}}>Best Selling Product</h1>
  <div className={styles.products}>
-  {/* <SecondSlider/> */}
+  <SecondSlider/>
   </div>  
   <h1 style={{fontWeight:"bold",fontSize:"30px",marginTop:"30px"}}>New Arrivals</h1> 
   <div className={styles.product}>
     
-    {/* <ThirdSlider/> */}
+    <ThirdSlider/>
     
   </div>  
  
@@ -147,7 +147,7 @@ The Ultimate Domestic Online Shopping Experience Platform in India</h1>
    <img src='maual.jpg' alt="kitchen"/>
 </div>
   </div>
- {/* <Instructions/> */}
+ <Instructions/>
 </div>
   )
 }

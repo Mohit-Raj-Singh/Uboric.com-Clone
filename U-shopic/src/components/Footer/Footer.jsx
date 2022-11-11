@@ -8,7 +8,7 @@ import {
   Image,
   Text,
 } from "@chakra-ui/react";
-import logo from "./assets/logo.jpg";
+import logo from "./assets/uboric.png";
 import styles from "./footer.module.css";
 import { FaFacebookF } from "react-icons/fa";
 import { BsInstagram } from "react-icons/bs";
