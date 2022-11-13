@@ -114,7 +114,7 @@ const SignIn = () => {
             </Box>
           </Stack>
           <Box paddingTop="50px">
-            Are you new here 💅?{" "}
+            Register on U-Shopic 💅?{" "}
             <Link color="teal.500" href="sign-up">
               Sign Up
             </Link>

@@ -12,7 +12,7 @@ const AllProducts = ({data}) => {
     Aos.init({duration:1000})
     
   },[])
-
+  
   return (
     <Box  data-aos='fade-up'display={"flex"}  border={"2px solid black"} 
     boxShadow='outline' p='6' rounded='md' bg='white'

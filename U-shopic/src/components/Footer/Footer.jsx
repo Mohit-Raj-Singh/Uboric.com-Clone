@@ -51,7 +51,7 @@ const Footer = () => {
         <Flex gap={"2rem"} padding="2rem">
           <Box width={"20%"}>
             <Image src={logo} width="17rem" />
-            <Flex>
+            <Flex> 
             <a target={"_blank"} href="https://www.facebook.com/Uboricllp">
               <FaFacebookF
                 style={{

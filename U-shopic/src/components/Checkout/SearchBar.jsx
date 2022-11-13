@@ -13,7 +13,7 @@ const SearchBar = ({ inputQueryHandler, suggestions,label, getSearchData }) => {
     setInputText(e.target.value);
     getSearchData(e.target.value);
   };
-
+  
   const handleActiveSuggestions = (e) => {
     switch (e.keyCode) {
       //up arrow key code is 38
