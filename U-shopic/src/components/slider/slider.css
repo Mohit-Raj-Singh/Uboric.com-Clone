@@ -1,0 +1,138 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+:root {
+  --heights: 80vh;
+  --widths: 100%;
+}
+
+.slider-container {
+  height: var(--heights);
+  width: var(--widths);
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+}
+.btn{
+  margin: 0;
+  text-align: center;
+  
+  background-color: blue;
+  color: black;
+}
+.active {
+  display: inline-block;
+}
+
+.inactive {
+  display: none;
+}
+
+.slides {
+  height: var(--heights);
+  width: var(--widths);
+  position: relative;
+}
+
+.slide-image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  object-fit: cover;
+}
+
+.slide-title,
+.slide-text {
+  width: 100%;
+  height: 100%;
+  color: white;
+  font-size: 50px;
+  position: absolute;
+  text-align: center;
+  top: 40%;
+  z-index: 10;
+}
+
+.slide-text {
+  top: 65%;
+  font-size: 2rem;
+}
+
+.prev,
+.next {
+  color: transparent;
+  cursor: pointer;
+  z-index: 100;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-left: -50%;
+  /* padding: 1rem; */
+  margin-top: -3rem;
+  font-size: 40px;
+  font-weight: bold;
+  border-radius: 0px 5px 5px 0px;
+}
+
+.slider-container .prev,.slider-container .next {
+  color: black
+  
+}
+
+.slider-container:hover .prev:hover,
+.slider-container:hover .next:hover {
+  color: rgba(129, 124, 124, 0.6);
+  background-color: white;
+  transition: all 0.5s ease-in;
+}
+
+.next {
+  right: 0;
+  border-radius: 5px 0px 0px 5px;
+}
+
+.all-dots {
+  width: 90%;
+  height: 50%;
+  position: absolute;
+  display: flex;
+  top: 95%;
+  justify-content: center;
+  /* z-index: 200; */
+  padding-left: 10%;
+  /* margin-left: 10px; */
+}
+
+.dot {
+  cursor: pointer;
+  text-align: center;
+  height: 0.6rem;
+  width: 0.6rem;
+  margin: 0px 3px;
+ 
+  background-color: transparent;
+  /* background-color: rgba(0, 0, 0, 0.3); */
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.slider-container:hover .dot:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* .active-dot {
+  background-color: rgba(255, 255, 255, 0.5);
+} */
+
+.slider-container:hover .dot{
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.slider-container:hover .active-dot{
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.play-pause {
+  color: black;
+}
