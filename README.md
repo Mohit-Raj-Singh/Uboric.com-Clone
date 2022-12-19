@@ -21,14 +21,6 @@ Uboric is an India-based E-commerce that delivers throughout India. You can shop
 </table>
 
 
-## 🛠 Tech Stack
-
-- React.js
-- React-Redux
-- Javascript
-- Chakra-UI
-- React-Thunk
-- Local storage
 
 ### `Functionalities`
 
@@ -73,5 +65,5 @@ Give a ⭐️ if you like this project!
 ## Thank you note
 Thank you all who is giving precious time to visit our little creative project which is made with lot of efforts.
 
-_<p align="center"><sub>- Readme file designed by <a href="https://github.com/iesparag">Parag Jain</a> -</sub></p>_
+_<p align="center"><sub>- Readme file designed by <a href="https://github.com/Mohit-Raj-Singh">Mohit Raj Singh</a> -</sub></p>_
 
