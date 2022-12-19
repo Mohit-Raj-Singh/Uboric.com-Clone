@@ -14,8 +14,8 @@ import {
   Stack,
   useToast,
 } from "@chakra-ui/react";
-import {useNavigate} from 'react-router-dom'
-import { useDispatch,useSelector } from "react-redux";
+import { useNavigate } from 'react-router-dom'
+import { useDispatch, useSelector } from "react-redux";
 import { login } from "../Redux/AuthReducer/action";
 import { LOGIN_SUCCESS } from "../Redux/AuthReducer/actionTypes";
 
@@ -23,38 +23,38 @@ const SignIn = () => {
 
   const toast = useToast()
   const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const dispatch = useDispatch();
-    const navigate = useNavigate();
-    const isLoading = useSelector((state) => (state.AuthReducer.isLoading));
+  const [password, setPassword] = useState("");
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const isLoading = useSelector((state) => (state.AuthReducer.isLoading));
 
-    const loginHandler = () => {
-      if (email && password) {
-        const params = {
-          email,
-          password,
-        };
-        dispatch(login(params)).then((res) => {
-          if (res === LOGIN_SUCCESS) {
-            console.log(res)
-              toast({
-                description: "Signed in successfully",
-                status: 'success',
-                duration: 2000,
-                isClosable: true,
-              })
-            navigate("/", { replace: true });
-          } else {
-            toast({
-              description: "Failed",
-              status: 'error',
-              duration: 2000,
-              isClosable: true,
-            })
-          }
-        });
-      }
-    };
+  const loginHandler = () => {
+    if (email && password) {
+      const params = {
+        email,
+        password,
+      };
+      dispatch(login(params)).then((res) => {
+        if (res === LOGIN_SUCCESS) {
+          console.log(res)
+          toast({
+            description: "Signed in successfully",
+            status: 'success',
+            duration: 2000,
+            isClosable: true,
+          })
+          navigate("/", { replace: true });
+        } else {
+          toast({
+            description: "Failed",
+            status: 'error',
+            duration: 2000,
+            isClosable: true,
+          })
+        }
+      });
+    }
+  };
 
   return (
     <Box height="85vh" bg="#ffffff" padding="0px">
@@ -132,7 +132,7 @@ const SignIn = () => {
               border: "1px solid black",
             }}
             onClick={loginHandler}
-                  isLoading={isLoading}
+            isLoading={isLoading}
           >
             Sign In
           </Button>
