@@ -14,43 +14,41 @@ import {
   Radio,
 } from "@chakra-ui/react";
 
-const Items = ({ name, type, priceFn,filterPrice,start,end }) => {
-
+const Items = ({ name, type, priceFn, filterPrice, start, end }) => {
   return (
     <Flex gap="1rem">
-      <input type={"radio"}
-      value={type}
-      name={name}
+      <input
+        type={"radio"}
+        value={type}
+        name={name}
         onChange={() => {
           priceFn(type);
-          filterPrice(start,end)
+          filterPrice(start, end);
         }}
       />
-      <Text color={"#818181"}  >{type}</Text>
+      <Text color={"#818181"}>{type}</Text>
     </Flex>
   );
 };
 
-export const Price = ({filterPrice}) => {
-    const [searchParams, setSearchParams] = useSearchParams();
-    let catParams= searchParams.getAll("category") || ""
-    let brandParams= searchParams.getAll("brand") || ""
-    console.log(searchParams)
-    const [priceRange,setPriceRange] = useState([]);
-
-  
+export const Price = ({ filterPrice }) => {
+  const [searchParams, setSearchParams] = useSearchParams();
+  let catParams = searchParams.getAll("category") || "";
+  let brandParams = searchParams.getAll("brand") || "";
+  console.log(searchParams);
+  const [priceRange, setPriceRange] = useState([]);
 
   const PriceRange = (type) => {
-    setPriceRange([type])
+    setPriceRange([type]);
   };
 
-  useEffect(()=>{
+  useEffect(() => {
     setSearchParams({
-       category:catParams,
-       brand:brandParams,
-        range:priceRange
-    })
-  },[priceRange])
+      category: catParams,
+      brand: brandParams,
+      range: priceRange,
+    });
+  }, [priceRange]);
 
   return (
     <Accordion allowToggle width={"100%"}>
@@ -68,7 +66,6 @@ export const Price = ({filterPrice}) => {
             // title={"Price"}
             name="price"
             type={"100-500"}
-
             priceFn={PriceRange}
             filterPrice={filterPrice}
             start="0"

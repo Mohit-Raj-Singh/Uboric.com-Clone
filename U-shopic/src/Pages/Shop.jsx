@@ -95,7 +95,7 @@ const Shop = () => {
         <Category />
       </Stack>
 
-      <Grid templateColumns={breakpoints} gap={6} cursor={"pointer"} w="80%">
+      <Grid templateColumns={breakpoints} gap={6} cursor={"pointer"} >
 
 
         {update == "true" ? updateData.map(item => (

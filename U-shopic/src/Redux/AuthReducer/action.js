@@ -5,7 +5,7 @@ const register = (payload) => (dispatch) => {
   dispatch({ type: types.REGISTER_REQUEST });
   console.log(payload);
   return axios
-    .post("https://uboric-2bqj.onrender.com/user/signup", payload)
+    .post("https://uboric-server.onrender.com/users", payload)
     .then((r) => {
       dispatch({ type: types.REGISTER_SUCCESS, payload: r.data });
       return types.REGISTER_SUCCESS;
@@ -19,7 +19,7 @@ const register = (payload) => (dispatch) => {
 const login = (params) => (dispatch) => {
   dispatch({ type: types.LOGIN_REQUEST });
   return axios
-    .post("https://uboric-2bqj.onrender.com/user/login", params)
+    .post("https://uboric-server.onrender.com/user", params)
     .then((r) => {
       dispatch({ type: types.LOGIN_SUCCESS, payload: r.data });
       console.log(r.data)

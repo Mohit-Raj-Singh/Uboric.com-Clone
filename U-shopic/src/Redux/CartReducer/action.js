@@ -45,7 +45,8 @@ const deleteCartFailure = ()=>{
 }
 export const updateCartData = (id,params)=>(dispatch)=>{
     dispatch(updateCartRequest())
-    return axios.put(`https://62ed747cc1ef25f3da7a4746.mockapi.io/userdata/${id}`,params
+    // return axios.put(`https://62ed747cc1ef25f3da7a4746.mockapi.io/userdata/${id}`,params
+    return axios.put(`https://uboric-server.onrender.com/cart/${id}`,params
       ).then((res)=>{
         dispatch(updateCartSuccess(res.data))
     }).then((dispatch(getCartData())))
@@ -56,7 +57,7 @@ export const updateCartData = (id,params)=>(dispatch)=>{
 
 export const deleteCartData = (id)=>(dispatch)=>{
     dispatch(deleteCartRequest())
-    return axios.delete(`https://62ed747cc1ef25f3da7a4746.mockapi.io/userdata/${id}`)
+    return axios.delete(`https://uboric-server.onrender.com/cart/${id}`)
     // .then((res)=>{ dispatch(deleteCartSuccess(res.data))
     // })
     .then(dispatch(getCartData()))
@@ -67,7 +68,7 @@ export const deleteCartData = (id)=>(dispatch)=>{
 
 export const getCartData =  ()=>async(dispatch)=> {
         dispatch(handleCartRequest())
-      await axios.get(`https://62ed747cc1ef25f3da7a4746.mockapi.io/userdata`)
+      await axios.get(`https://uboric-server.onrender.com/cart`)
       .then((res)=>{return dispatch({type: types.GET_CART_SUCCESS,data:(res.data)})})
         .catch(e=>dispatch(handleCartFailure(e)))
 }

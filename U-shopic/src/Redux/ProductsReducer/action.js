@@ -16,7 +16,8 @@ const handleFailure= ()=>{
 export const getData =  (params)=>async(dispatch)=> {
     console.log("params"+ " "+ params)
         dispatch(handleRequest())
-      await axios.get(`https://my-json-server.typicode.com/amit05c/fake_api/products?`,params)
+    //   await axios.get(`https://my-json-server.typicode.com/amit05c/fake_api/products?`,params)
+      await axios.get(`https://uboric-server.onrender.com/clothing`,params)
       .then((res)=>{return dispatch({type: types.GET_SUCCESS,payload:(res.data)})})
         .catch(e=>dispatch(handleFailure()))
 }

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {useSearchParams} from "react-router-dom"
+import { useSearchParams } from "react-router-dom";
 import {
   Accordion,
   AccordionItem,
@@ -13,7 +13,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 
-const Items = ({  type, BrandFn }) => {
+const Items = ({ type, BrandFn }) => {
   return (
     <Flex gap="1rem">
       <Checkbox
@@ -21,35 +21,33 @@ const Items = ({  type, BrandFn }) => {
           BrandFn(type);
         }}
       />
-      <Text color={"#818181"} >{type}</Text>
+      <Text color={"#818181"}>{type}</Text>
     </Flex>
   );
 };
 
 export const Brand = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  let catParams= searchParams.getAll("category") || ""
-  let priceParams= searchParams.getAll("range") || ""
-  const [brand,setBrand] = useState([])
+  let catParams = searchParams.getAll("category") || "";
+  let priceParams = searchParams.getAll("range") || "";
+  const [brand, setBrand] = useState([]);
   const BrandFn = (type) => {
-    let newbrand= type;
-    if(brand.includes(newbrand)){
-      let x= brand.filter(el=>el!=newbrand)
-      setBrand(x)
-    }else{
-      setBrand([...brand,newbrand])
+    let newbrand = type;
+    if (brand.includes(newbrand)) {
+      let x = brand.filter((el) => el != newbrand);
+      setBrand(x);
+    } else {
+      setBrand([...brand, newbrand]);
     }
-
   };
-  
-  useEffect(()=>{
+
+  useEffect(() => {
     setSearchParams({
-      category:[...catParams],
-      range:[...priceParams],
-      brand
-    })
-  },[brand])
-    
+      category: [...catParams],
+      range: [...priceParams],
+      brand,
+    });
+  }, [brand]);
 
   return (
     <Accordion allowToggle width={"100%"}>
@@ -66,27 +64,27 @@ export const Brand = () => {
           <Items
             // title={"Price"}
             name="Brand"
-            type={"26 carat"}
+            type={"Puma"}
             BrandFn={BrandFn}
           />
           <Items
             // title={"Price"}
             name="Brand"
-            type={"DANIEL CHRISTIAN"}
+            type={"JC Collection"}
             BrandFn={BrandFn}
           />
 
           <Items
             // title={"Price"}
             name="Brand"
-            type={"Finachi"}
+            type={"Roadster"}
             BrandFn={BrandFn}
           />
 
-         <Items
+          <Items
             // title={"Price"}
             name="Brand"
-            type={"jacksapprow"}
+            type={"U.S. Polo Assn."}
             BrandFn={BrandFn}
           />
         </AccordionPanel>
